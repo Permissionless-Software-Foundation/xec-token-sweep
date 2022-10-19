@@ -2,7 +2,7 @@
 const assert = require('chai').assert
 const sinon = require('sinon')
 // const wallet = require('@psf/bch-js')
-const Wallet = require('minimal-slp-wallet')
+const Wallet = require('minimal-ecash-wallet')
 
 // Locally global variables.
 // const wallet = new wallet()

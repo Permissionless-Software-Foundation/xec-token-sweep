@@ -7,7 +7,7 @@ const assert = require('chai').assert
 const sinon = require('sinon')
 const cloneDeep = require('lodash.clonedeep')
 // const BCHJS = require('@psf/bch-js')
-const Wallet = require('minimal-slp-wallet')
+const Wallet = require('minimal-ecash-wallet')
 
 // Local libraries
 const SweeperLib = require('../../index.js')
@@ -61,7 +61,7 @@ describe('#index.js', () => {
       } catch (err) {
         assert.include(
           err.message,
-          'minimal-slp-wallet instance must be passed when instantiating.'
+          'minimal-ecash-wallet instance must be passed when instantiating.'
         )
       }
     })

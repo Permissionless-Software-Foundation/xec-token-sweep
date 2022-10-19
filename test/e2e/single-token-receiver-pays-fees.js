@@ -19,14 +19,17 @@ const receiverWif = 'L2uMNgBUWmu2hFhCAYhpvDdbQGxmSF4Ud5J8KiaDR7E8ojLrpL8b'
 
 // const BCHJS = require('@psf/bch-js')
 // const bchjs = new BCHJS()
-const SlpWallet = require('minimal-slp-wallet')
+const XecWallet = require('minimal-ecash-wallet')
 
 // Unit under test
 const SweeperLib = require('../../index')
 
 async function runTest () {
   try {
-    const wallet = new SlpWallet(receiverWif)
+    const wallet = new XecWallet(receiverWif, {
+      interface: 'consumer-api',
+      restURL: 'http://wa-usa-xec-consumer.fullstackcash.nl'
+    })
     await wallet.walletInfoPromise
     await wallet.initialize()
 
@@ -36,7 +39,7 @@ async function runTest () {
 
     await checkSetup(sweeperLib)
 
-    const hex = await sweeperLib.sweepTo(sweeperLib.receiver.slpAddr)
+    const hex = await sweeperLib.sweepTo(sweeperLib.receiver.eCashAddr)
     // console.log(`hex: ${hex}`)
 
     const txid = await sweeperLib.blockchain.broadcast(hex)
