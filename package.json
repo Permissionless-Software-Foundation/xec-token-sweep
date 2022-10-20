@@ -1,6 +1,6 @@
 {
   "name": "xec-token-sweep",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An npm library for sweeping XEC and SLP Tokens from a paper wallet.",
   "main": "dist/xec-token-sweep.min.js",
   "scripts": {
@@ -75,8 +75,5 @@
     "hooks": {
       "pre-commit": "npm run lint && npm run build"
     }
-  },
-  "peerDependencies": {
-    "minimal-ecash-wallet": ">= 5"
   }
 }
