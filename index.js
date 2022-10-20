@@ -87,7 +87,7 @@ class Sweeper {
       )
 
       const filteredUtxosFromReceiver = await this.blockchain.filterUtxosByTokenAndBch2(this.receiver.eCashAddr)
-      console.log(`filteredUtxosFromReceiver: ${JSON.stringify(filteredUtxosFromReceiver, null, 2)}`)
+      // console.log(`filteredUtxosFromReceiver: ${JSON.stringify(filteredUtxosFromReceiver, null, 2)}`)
 
       // Get the balance and UTXOs from the paper wallet.
       this.BCHBalanceFromPaperWallet = await this.blockchain.getBalanceForCashAddr(
@@ -105,7 +105,7 @@ class Sweeper {
         filteredUtxosFromPaperWallet.tokenUTXOs
       this.UTXOsFromPaperWallet.nftUTXOs = filteredUtxosFromPaperWallet.nftUTXOs
       this.UTXOsFromPaperWallet.bchUTXOs = filteredUtxosFromPaperWallet.bchUTXOs
-      console.log('this.UTXOsFromPaperWallet: ', this.UTXOsFromPaperWallet)
+      // console.log('this.UTXOsFromPaperWallet: ', this.UTXOsFromPaperWallet)
     } catch (e) {
       console.error('Error in populateObjectFromNetwork()')
       // throw new Error(e.message)
@@ -144,26 +144,26 @@ class Sweeper {
   // the BCH network, for sweeping tokens and/or BCH from a paper wallet.
   async sweepTo (toSLPAddr) {
     // Used for debugging.
-    console.log(`Paper wallet address: ${this.paper.bchAddr}`)
-    console.log(
-      `this.BCHBalanceFromPaperWallet: ${this.BCHBalanceFromPaperWallet}`
-    )
-    console.log(
-      `this.UTXOsFromPaperWallet: ${JSON.stringify(
-        this.UTXOsFromPaperWallet,
-        null,
-        2
-      )}`
-    )
-    console.log(`Receiver address: ${this.receiver.bchAddr}`)
-    console.log(`this.BCHBalanceFromReceiver: ${this.BCHBalanceFromReceiver}`)
-    console.log(
-      `this.UTXOsFromReceiver: ${JSON.stringify(
-        this.UTXOsFromReceiver,
-        null,
-        2
-      )}`
-    )
+    // console.log(`Paper wallet address: ${this.paper.bchAddr}`)
+    // console.log(
+    //   `this.BCHBalanceFromPaperWallet: ${this.BCHBalanceFromPaperWallet}`
+    // )
+    // console.log(
+    //   `this.UTXOsFromPaperWallet: ${JSON.stringify(
+    //     this.UTXOsFromPaperWallet,
+    //     null,
+    //     2
+    //   )}`
+    // )
+    // console.log(`Receiver address: ${this.receiver.bchAddr}`)
+    // console.log(`this.BCHBalanceFromReceiver: ${this.BCHBalanceFromReceiver}`)
+    // console.log(
+    //   `this.UTXOsFromReceiver: ${JSON.stringify(
+    //     this.UTXOsFromReceiver,
+    //     null,
+    //     2
+    //   )}`
+    // )
 
     try {
       let hex = ''
