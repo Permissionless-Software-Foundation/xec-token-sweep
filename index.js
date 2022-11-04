@@ -181,13 +181,13 @@ class Sweeper {
       if (tokenIds.length === 0) {
         // If there is no tokens AND no BCH, throw an error.
         if (this.UTXOsFromPaperWallet.bchUTXOs.length === 0) {
-          throw new Error('No BCH or tokens found on paper wallet')
+          throw new Error('No eCash or eTokens found on paper wallet')
         }
 
         // If there is not enough BCH, throw an error
         if (this.BCHBalanceFromPaperWallet < this.donation + SAFETY_SATS) {
           throw new Error(
-            'Not enough BCH on the paper wallet to pay fees. Send more BCH to the paper wallet in order to sweep it.'
+            'Not enough eCash on the paper wallet to pay fees. Send more eCash to the paper wallet in order to sweep it.'
           )
         }
 
@@ -231,12 +231,12 @@ class Sweeper {
         // If the receiver wallet does not have enough BCH, throw an error.
         if (this.BCHBalanceFromReceiver < this.donation + SAFETY_SATS) {
           throw new Error(
-            'Not enough BCH on paper wallet or receiver wallet to pay fees.'
+            'Not enough eCash on paper wallet or receiver wallet to pay fees.'
           )
         }
 
         console.log(
-          'Not enough BCH found on paper wallet. Sweeping with BCH from the reciever wallet.'
+          'Not enough eCash found on paper wallet. Sweeping with eCash from the reciever wallet.'
         )
 
         // Generate a token sweep using BCH from the receiver wallet to pay
@@ -250,7 +250,7 @@ class Sweeper {
         // Sweep using BCH from the paper wallet to pay TX fees.
 
         console.log(
-          'BCH found on paper wallet, sweeping with BCH from the paper wallet.'
+          'eCash found on paper wallet, sweeping with eCash from the paper wallet.'
         )
 
         // Generate a token sweep using BCH from the paper wallet to pay
