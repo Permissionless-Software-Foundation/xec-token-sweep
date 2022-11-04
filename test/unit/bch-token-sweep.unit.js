@@ -197,7 +197,7 @@ describe('#index.js', () => {
         await uut.sweepTo(uut.receiver.slpAddr)
       } catch (err) {
         console.log(err)
-        assert.include(err.message, 'No BCH or tokens found on paper wallet')
+        assert.include(err.message, 'No eCash or eTokens found on paper wallet')
       }
     })
 
@@ -246,7 +246,7 @@ describe('#index.js', () => {
       } catch (err) {
         assert.include(
           err.message,
-          'Not enough BCH on the paper wallet to pay fees. Send more BCH to the paper wallet in order to sweep it.'
+          'Not enough eCash on the paper wallet to pay fees. Send more eCash to the paper wallet in order to sweep it.'
         )
       }
     })
@@ -358,7 +358,7 @@ describe('#index.js', () => {
       } catch (err) {
         assert.include(
           err.message,
-          'Not enough BCH on paper wallet or receiver wallet to pay fees.'
+          'Not enough eCash on paper wallet or receiver wallet to pay fees.'
         )
       }
     })
